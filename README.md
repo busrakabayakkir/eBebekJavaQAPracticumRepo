@@ -38,8 +38,10 @@ public class Main {
         employee0.hireYear= 2006;
         employee0.toStringMethod();
     }
-}
-public class Employee {
+    }
+    public class Employee {
+
+
 
     String name;
     double salary;
@@ -91,8 +93,9 @@ public class Employee {
         System.out.println("Çalışanın Hizmet Yılına Göre Zamlı Maaşı : "+raiseSalary()+" ₺");
         System.out.println("Çalışanın İş Verene Maaliyeti : " +(salary+tax()+bonus())+" ₺");
         System.out.println("Çalışanın Mevcut Toplam Maaşı : " +(salary+bonus())+" ₺");
+     }
+    
     }
-}
 
 
 
