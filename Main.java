@@ -2,10 +2,10 @@ public class Main {
     public static void main(String[] args) {
 
         Employee employee0 =new Employee();
-        employee0.name = "Ali Ateş";
-        employee0.salary=  2825.90;
-        employee0.workHours= 58.5;
-        employee0.hireYear= 2006;
-        employee0.toStringMethod();
+        employee0.setName("Ali Ateş") ;
+        employee0.setSalary(2825.90);
+        employee0.setworkHours(58.5) ;
+        employee0.setHireYear(2006) ;
+        employee0.myToStringMethod();
     }
 }
