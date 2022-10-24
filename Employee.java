@@ -1,9 +1,41 @@
 public class Employee {
 
-    String name;
-    double salary;
-    double workHours;
-    int hireYear;
+    private String name;
+    private double salary;
+    private double workHours;
+    private int hireYear;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public double getWorkHours() {
+        return workHours;
+    }
+
+    public void setWorkHours(double workHours) {
+        this.workHours = workHours;
+    }
+
+    public int getHireYear() {
+        return hireYear;
+    }
+
+    public void setHireYear(int hireYear) {
+        this.hireYear = hireYear;
+    }
 
     public double tax() {
         //Çalışanın maaşı 1000 TL'den az ise vergi uygulanmayacaktır.
@@ -15,7 +47,7 @@ public class Employee {
             return salary*0.03;
         }
         else{
-        return 0;
+            return 0;
         }
     }
 
@@ -26,7 +58,7 @@ public class Employee {
             return (workHours-standardWorkHours)*30;
         }
         else {
-        return 0;
+            return 0;
         }
     }
     public double raiseSalary(){
@@ -35,29 +67,29 @@ public class Employee {
         int howManyYearsWorking = now-hireYear;
         //Eğer çalışan 10 yıldan az bir süredir çalışıyorsa maaşına %5 zam yapılacaktır.
         if (howManyYearsWorking<10){
-            return salary*1.05;
+            return salary*0.05;
         }
         //Eğer çalışan 9 yıldan fazla ve 20 yıldan az çalışıyorsa maaşına %10 zam yapılacaktır.
         if (howManyYearsWorking>9&&howManyYearsWorking<20){
-            return salary*1.1;
+            return salary*0.1;
         }
         //Eğer çalışan 19 yıldan fazla çalışıyorsa %15 zam yapılacaktır.
         if (howManyYearsWorking>20){
-            return salary*1.15;
+            return salary*0.15;
         }
         else{
-        return 0;}
+            return 0;}
     }
-    public void toStringMethod(){
-        System.out.println("Çalışanın Adı : " +name);
-        System.out.println("Çalışanın Sabit Maaşı : " +salary+" ₺");
-        System.out.println("Çalışanın Haftalık Çalışma Saati : " + workHours);
-        System.out.println("Çalışanın İşe Başlangıç Yılı : " +hireYear);
+    public void myToStringMethod(){
+        System.out.println("Çalışanın Adı : " +getName());
+        System.out.println("Çalışanın Sabit Maaşı : " +getSalary()+" ₺");
+        System.out.println("Çalışanın Haftalık Çalışma Saati : " + getWorkHours());
+        System.out.println("Çalışanın İşe Başlangıç Yılı : " +getHireYear());
         System.out.println("Çalışanın Maaşına Düşen Vergi : "+tax() +" ₺");
         System.out.println("Çalışanın Kazandığı Haftalık Bonus : "+bonus()+" ₺");
-        System.out.println("Çalışanın Hizmet Yılına Göre Zamlı Maaşı : "+raiseSalary()+" ₺");
-        System.out.println("Çalışanın İş Verene Maaliyeti : " +(salary+tax()+bonus())+" ₺");
-        System.out.println("Çalışanın Mevcut Toplam Maaşı : " +(salary+bonus())+" ₺");
+        System.out.println("Çalışanın Hizmet Yılına Göre Maaşına Yapılan Zam : "+raiseSalary()+" ₺");
+        System.out.println("Çalışanın Vergi ve Bonuslarla Toplam Maaşı : " +(getSalary()-tax()+bonus())+" ₺");
+        System.out.println("Çalışanın Mevcut Toplam Maaşı : " +(getSalary()+raiseSalary()-tax()+bonus())+" ₺");
     }
 
 
